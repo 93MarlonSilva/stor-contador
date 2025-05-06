@@ -12,16 +12,11 @@ import {
   IconFolder,
   IconHelp,
   IconLogout,
-  IconInnerShadowTop,
   IconListDetails,
   IconReport,
-  IconSearch,
   IconSettings,
   IconUsers,
 } from "@tabler/icons-react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { Building2, Users, Settings } from "lucide-react";
 import Image from "next/image";
 
 import { NavDocuments } from "@/components/nav-documents";

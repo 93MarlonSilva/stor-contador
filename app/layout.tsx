@@ -7,11 +7,6 @@ import { SidebarProvider } from "@/components/providers/sidebar-provider";
 import { cookies } from "next/headers";
 import { cn } from "@/lib/utils";
 
-const META_THEME_COLORS = {
-  light: "#e8ebea",
-  dark: "#09090b",
-};
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -42,7 +37,9 @@ export default async function RootLayout({
         className={cn(
           "bg-background overscroll-none font-sans antialiased",
           activeThemeValue ? `theme-${activeThemeValue}` : "",
-          isScaled ? "theme-scaled" : ""
+          isScaled ? "theme-scaled" : "",
+          geistSans.variable,
+          geistMono.variable
         )}
       >
         <ThemeProvider
