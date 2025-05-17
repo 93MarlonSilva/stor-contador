@@ -18,3 +18,4 @@ pnpm dev
 bun dev
 ```
 
+up
