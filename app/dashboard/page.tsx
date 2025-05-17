@@ -1,7 +1,7 @@
-import { AppSidebar } from "@/components/app-sidebar";
-import { ChartAreaInteractive } from "@/components/chart-area-interactive";
-import { SiteHeader } from "@/components/site-header";
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/sidebar/sidebar-component";
+import { ChartAreaInteractive } from "@/components/pages/dashboard/charts/chart-area-interactive";
+import { SiteHeader } from "@/components/header/header-component";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar-ui";
 
 export default function Page() {
   return (

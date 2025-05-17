@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import { ActiveThemeProvider } from "@/components/active-theme";
+import { ActiveThemeProvider } from "@/components/theme/active-theme-component";
 import { SidebarProvider } from "@/components/providers/sidebar-provider";
 import { cookies } from "next/headers";
 import { cn } from "@/lib/utils";
+import { RouteLoading } from "@/components/spinner/spinner-component";
+import { AuthProvider } from "@/components/providers/auth-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +21,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Stor Contador",
-  description: "Stor Contador",
+  description: "Sistema de Gestão Contábil",
 };
 
 export default async function RootLayout({
@@ -51,7 +53,10 @@ export default async function RootLayout({
         >
           <ActiveThemeProvider initialTheme={activeThemeValue}>
             <SidebarProvider>
-              {children}
+              <AuthProvider>
+                <RouteLoading />
+                {children}
+              </AuthProvider>
             </SidebarProvider>
           </ActiveThemeProvider>
         </ThemeProvider>
