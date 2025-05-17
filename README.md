@@ -17,5 +17,3 @@ pnpm dev
 # ou
 bun dev
 ```
-
-up
